@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customers</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-blue.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main>
+      <h2>All customers</h2>
+      <table border="1" align="center" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <thead>
+          <tr>
+            <th class="mdl-data-table__cell--non-numeri">Customer ID</th>
+            <th class="mdl-data-table__cell--non-numeric">Name</th>
+            <th class="mdl-data-table__cell--non-numeric">Customer Class</th>
+            <th class="mdl-data-table__cell--non-numeric">Favourite Ice Cream</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% result.forEach(customer =>{ %>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric"><%= customer.customerId %></td>
+              <td class="mdl-data-table__cell--non-numeric"><%= customer.firstname %> <%= customer.lastname %></td>
+              <td class="mdl-data-table__cell--non-numeric"><%= customer.customerclass %></td>
+              <td class="mdl-data-table__cell--non-numeric"><%= customer.favoritIceCream %></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      </br>
+      <a href='/'><button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Menu</button></a>
+  </main>
+</body>
+</html>

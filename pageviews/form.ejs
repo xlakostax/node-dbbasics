@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= header %></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.light_blue-blue.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </head>
+  <body>
+    <h2><%= header %></h2>
+    <form class="" action="<%= action %>" method="post">
+        <p>
+          <label for="customerId">Customer Id:
+            <input type="text" id="customerId" name="customerId" size="5" value="<%= customerId.value %>" <%= customerId.readonly %>>
+          </label>
+        </p>
+        <p>
+          <label for="firstname">First Name:
+            <input type="text" id="firstname" name="firstname" size="5" value="<%= firstname.value %>" <%= firstname.readonly %>>
+          </label>
+        </p>
+        <p>
+          <label for="lastname">Last Name:
+            <input type="text" id="lastname" name="lastname" size="5" value="<%= lastname.value %>" <%= lastname.readonly %>>
+          </label>
+        </p>
+        <p>
+          <label for="customerclass">Customer Class:
+            <input type="text" id="customerclass" name="customerclass" size="5" value="<%= customerclass.value %>" <%= customerclass.readonly %>>
+          </label>
+        </p>
+        <p>
+          <label for="favoritIceCream">Favorite Ice Cream:
+            <input type="text" id="favoritIceCream" name="favoritIceCream" size="5" value="<%= favoritIceCream.value %>" <%= favoritIceCream.readonly %>>
+          </label>
+        </p>
+      <input id='button' type="submit" name="button" value='Get' onclick='getURL()'  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      </br>
+      </br>
+      <a href="/"><button type="button" name="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Menu</button></a>
+    </form>
+    <script>
+    window.onload = () => {
+      var url = window.location.href;
+      var elem = document.getElementById("button");
+      url.includes('updateform') === true ? elem.value = "Get" : url.includes('addcustomer') === true ? elem.value = "Add" : elem.value = "Update";
+    }
+    </script>
+  </body>
+</html>
